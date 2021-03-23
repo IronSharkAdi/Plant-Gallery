@@ -40,7 +40,7 @@ function Home() {
         },
     ]
     return (
-        <>
+        <div className="Home">
             <div className="landing_page">
             <nav className="navbar">
                 <div className="nav_items">  
@@ -61,7 +61,7 @@ function Home() {
             </div>
             </div>
             {/*  */}
-            <div className="plant_showcase" >
+            <div className="plants_showcase"  >
                 {plants.map(object =>{
                     return(
                         <>
@@ -72,7 +72,7 @@ function Home() {
                     )
                 })}
             </div>
-        </>
+        </div>
     )
 }
 

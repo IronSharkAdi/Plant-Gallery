@@ -54,6 +54,11 @@
 }
 
 .plants_showcase {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.plant {
 }
 
 .plant_image {
