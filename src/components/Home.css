@@ -43,9 +43,14 @@
 }
 .headings {
   display: flex;
-  height: 80vh;
+  flex-direction: column;
+  height: 60vh;
   justify-content: center;
   align-items: center;
+  animation-name: upanddown;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
 
 .plants_showcase {
@@ -55,4 +60,16 @@
   width: 300px;
   height: 300px;
   border-radius: 25px;
+}
+
+@keyframes upanddown {
+  0% {
+    transform: translateY(30px);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(30px);
+  }
 }
