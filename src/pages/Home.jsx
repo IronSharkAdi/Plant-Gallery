@@ -4,6 +4,7 @@ import logo from '../img/logo.png'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import StarsIcon from '@material-ui/icons/Stars';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import { Link } from 'react-router-dom'
 
 function Home() {
     const mostLikedPlants =[
@@ -72,8 +73,8 @@ function Home() {
                     <p className="nav_item" > About</p>
                 </div>
                 <div className="nav_items">
-                    <p className="nav_item">Login</p>
-                    <p className="nav_item">Register</p>
+                    <Link to="/login" className="link" ><p className="nav_item">Login</p> </Link> 
+                    <Link to="/register" className="link" > <p className="nav_item">Register</p> </Link> 
                 </div>
             </nav>
             <div className="headings">

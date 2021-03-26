@@ -27,11 +27,16 @@
 .nav_items {
   display: flex;
 }
+.link {
+  text-decoration: none;
+}
 .nav_item {
   margin: 15px;
   font-weight: bold;
   align-self: center;
   cursor: pointer;
+  text-decoration: none;
+  color: black;
 }
 
 .sub_heading {
