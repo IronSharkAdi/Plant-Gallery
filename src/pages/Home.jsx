@@ -71,7 +71,10 @@ function Home() {
             }
         }
     }, [])
-    console.log(user.length)
+
+
+
+    console.log(user)
     return (
         <div className="Home">
             <div className="landing_page">
@@ -85,8 +88,7 @@ function Home() {
                 </div>
                 <div className="nav_items">
                     {user.length == 0 ?<><Link to="/login" className="link" ><p className="nav_item">Login</p> </Link> 
-                    <Link to="/register" className="link" > <p className="nav_item">Register</p> </Link></> : <h3 className="greeting">Hey {user.name}</h3>}
-                    
+                    <Link to="/register" className="link" > <p className="nav_item">Register</p> </Link></> : <Link to="/dashboard" className="link" ><h3 className="greeting">Hey {user.name}</h3></Link>}
                 </div>
             </nav>
             <div className="headings">
