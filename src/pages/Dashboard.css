@@ -1,0 +1,8 @@
+.dashboard {
+  background: url("../img/Scene-24.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  height: 100vh;
+}

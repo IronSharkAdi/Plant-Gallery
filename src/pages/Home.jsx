@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import './Home.css'
 import logo from '../img/logo.png'
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import StarsIcon from '@material-ui/icons/Stars';
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { Link } from 'react-router-dom'
+import  { UserContext } from '../context_api/user'
 
 function Home() {
+    const [user , setUser] = useContext(UserContext)
     const mostLikedPlants =[
         {
             img : "https://images.pexels.com/photos/5858235/pexels-photo-5858235.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
@@ -61,6 +63,15 @@ function Home() {
             owner : "Mickey Mouse"
         },
     ]
+    useEffect(() => {
+        if(user.length == 0){
+            var name = localStorage.getItem("Name");
+            if(name != null){
+                setUser({name : name})
+            }
+        }
+    }, [])
+    console.log(user.length)
     return (
         <div className="Home">
             <div className="landing_page">
@@ -73,8 +84,9 @@ function Home() {
                     <p className="nav_item" > About</p>
                 </div>
                 <div className="nav_items">
-                    <Link to="/login" className="link" ><p className="nav_item">Login</p> </Link> 
-                    <Link to="/register" className="link" > <p className="nav_item">Register</p> </Link> 
+                    {user.length == 0 ?<><Link to="/login" className="link" ><p className="nav_item">Login</p> </Link> 
+                    <Link to="/register" className="link" > <p className="nav_item">Register</p> </Link></> : <h3 className="greeting">Hey {user.name}</h3>}
+                    
                 </div>
             </nav>
             <div className="headings">
