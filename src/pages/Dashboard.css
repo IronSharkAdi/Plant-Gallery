@@ -11,5 +11,43 @@
 .dashboard_container {
   background-color: rgba(0, 0, 0, 0.5);
   width: 1000px;
-  height: 50vh;
+  min-width: 500px;
+  height: 80vh;
+  border-radius: 25px;
+}
+
+.dashboard_text {
+  margin-left: 15px;
+  color: #ffffff;
+}
+.dashboard_upload {
+  margin-left: 20px;
+  color: cyan;
+}
+
+.upload_button {
+  margin: 0.5rem;
+  width: 200px;
+  height: 50px;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgb(46, 52, 53);
+  letter-spacing: 0.1rem;
+  border: none;
+  border-radius: 100px;
+  transition: 0.3s ease-in-out;
+  margin-top: 30px;
+}
+.upload_form {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.arrow_down {
+  color: white;
+  margin-left: 15px;
+  margin-top: 20px;
+  height: 60px;
+  font-size: 50px !important;
 }

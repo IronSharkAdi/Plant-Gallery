@@ -12,6 +12,9 @@ function Register() {
     const [password, setPassword] = useState("")
     const [name, setName] = useState("")
     const history = useHistory()
+    const [error, setError] = useState()
+
+
     const SignUpHandle = (e) =>{
         setBool(true)
     }
@@ -34,11 +37,12 @@ function Register() {
         firebaseApp.database().ref("users").orderByChild("id").equalTo(result.user.uid).on("child_added", function(data){
           localStorage.setItem("Name", data.val().name);
           setUser({id : result.user.uid , name :  data.val().name})
+          history.push('/')
         })
       }).catch(function(error) {
         console.log(error.code);
         console.log(error.message);
-        
+        setError(error.message)
      });
     }
     const handleSignUp = (e) =>{
@@ -55,6 +59,7 @@ function Register() {
           history.push('/')
       }).catch(function(error) {
         console.log(error)
+        setError(error.message)
      });
     }
 
@@ -87,9 +92,11 @@ function Register() {
               <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder="Password" className="forms_field-input" required />
             </div>
           </fieldset>
+          <h5 style={{color:"red"}} >{error ? error : ""}</h5>
           <div className="forms_buttons">
             <input type="submit" value="Log In" className="forms_buttons-action"/>
           </div>
+
         </form>
       </div>
       <div className="user_forms-signup">
@@ -106,9 +113,11 @@ function Register() {
               <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder="Password" className="forms_field-input" required />
             </div>
           </fieldset>
+          <h5 style={{color:"red"}} >{error ? error : ""}</h5>
           <div className="forms_buttons">
             <input type="submit" value="Sign up" className="forms_buttons-action"/>
           </div>
+          
         </form>
       </div>
     </div>
