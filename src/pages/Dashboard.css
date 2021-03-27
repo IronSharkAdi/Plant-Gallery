@@ -14,6 +14,9 @@
   min-width: 500px;
   height: 80vh;
   border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
 
 .dashboard_text {
@@ -50,4 +53,11 @@
   margin-top: 20px;
   height: 60px;
   font-size: 50px !important;
+}
+
+.go_back {
+  align-self: flex-end;
+  justify-self: flex-end;
+  position: absolute;
+  bottom: 0;
 }

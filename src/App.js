@@ -6,7 +6,8 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home';
 import Register from './pages/Register';
-import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard'; 
+import Explore from './pages/Explore';
 import {UserProvider} from './context_api/user'
 import { PlantProvider} from './context_api/plants'
 
@@ -17,8 +18,11 @@ function App() {
       <PlantProvider>
       <UserProvider>
         <Router>
-        <Switch>
-        <Route path="/dashboard">
+        <Switch>       
+          <Route path="/explore">
+            <Explore/>
+          </Route>
+          <Route path="/dashboard">
             <Dashboard/>
           </Route>
           <Route path="/register">

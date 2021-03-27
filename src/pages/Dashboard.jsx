@@ -3,6 +3,7 @@ import './Dashboard.css'
 import  { UserContext } from '../context_api/user'
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import firebaseApp from '../firebase.js'    
+import { Link } from 'react-router-dom'
 
 function Dashboard() {
     const [user , setUser] = useContext(UserContext)
@@ -47,6 +48,10 @@ function Dashboard() {
                     <button type="submit" className="upload_button" >{ uploading ? "Uploading....." : "Submit" }</button>
                 </form>
                 {url ? <> <img className="dashboard_text"  style={{width:"50vh"}} src={url} alt="plant pic" /> <h2 className="dashboard_text">Submitted</h2> </> : <></> }
+                <div className="go_back">
+                    <Link to="/" className="link" ><div className="green_bg_button">Go to home</div></Link>
+                    <Link to="/explore" className="link" ><div className="green_bg_button">Go to explore page</div> </Link>
+                </div>
             </div>
         </div>
     )

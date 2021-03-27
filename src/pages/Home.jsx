@@ -141,8 +141,8 @@ function Home() {
                 <img className="green_bg_left" src="https://images.pexels.com/photos/2826787/pexels-photo-2826787.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Home Image"/>
                 <div className="green_bg">
                     <h1>Wanna see more beautiful eye satisfying greeny pics or Share your greeny things ?</h1>
-                    <div className="green_bg_explore" >Explore <ArrowForwardIcon/> </div>
-                    <div className="green_bg_upload" >Upload <ArrowForwardIcon/> </div>
+                    <Link to="/explore" className="link" ><div className="green_bg_button" >Explore <ArrowForwardIcon/> </div></Link>
+                    <Link to="/dashboard" className="link" ><div className="green_bg_button" >Upload <ArrowForwardIcon/> </div> </Link>
                 </div>
             </div>
             <footer className="footer">
