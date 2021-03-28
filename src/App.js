@@ -8,37 +8,34 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard'; 
 import Explore from './pages/Explore';
-import {UserProvider} from './context_api/user'
-import { PlantProvider} from './context_api/plants'
+import  { UserContext } from './context_api/user'
+import { useContext } from 'react';
 
 
 function App() {
+  const [user , setUser] = useContext(UserContext)
+  
   return (
     <div className="App">
-      <PlantProvider>
-      <UserProvider>
         <Router>
         <Switch>       
           <Route path="/explore">
-            <Explore/>
+            {user.length != 0 ? <Explore/> : <Register/> }
           </Route>
           <Route path="/dashboard">
-            <Dashboard/>
+          {user.length != 0 ? <Dashboard/> : <Register/> }
           </Route>
           <Route path="/register">
-            <Register/>
+          {user.length == 0 ? <Register/> : <Home/> }
           </Route>
           <Route path="/login">
-            <Register/>
+          {user.length == 0 ? <Register/> : <Home/> }
           </Route>
-
           <Route path="/">
             <Home />
           </Route>
         </Switch>
         </Router>
-       </UserProvider>
-      </PlantProvider>
     </div>
   );
 }

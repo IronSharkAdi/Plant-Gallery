@@ -12,8 +12,6 @@ code {
     monospace;
 }
 
-
-
 .green_bg_button {
   margin-left: 20px;
   margin-bottom: 40px;
@@ -29,12 +27,12 @@ code {
   text-decoration: none;
   border-radius: 5px;
   color: white;
+  overflow: hidden;
 }
 .green_bg_button:hover {
   background-color: rgba(255, 255, 255, 0.616);
   color: black;
 }
-
 
 .plant_image {
   width: 300px;
@@ -44,4 +42,27 @@ code {
   -moz-box-shadow: 21px 16px 20px -5px rgba(0, 0, 0, 0.75);
   box-shadow: 21px 16px 20px -5px rgba(0, 0, 0, 0.75);
   object-fit: cover;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .plant_image {
+    width: 300px;
+    height: 300px;
+  }
+  .green_bg_button {
+    width: 150px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .plant_image {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+}
+@media (min-width: 320px) and (max-width: 480px) {
 }

@@ -13,6 +13,7 @@ function Register() {
     const [name, setName] = useState("")
     const history = useHistory()
     const [error, setError] = useState()
+    const [mobile , setMobile] = useState(false)
 
 
     const SignUpHandle = (e) =>{
@@ -26,6 +27,9 @@ function Register() {
             setBool(true)
         } else {
             setBool(false)
+        }
+        if( window.innerWidth < 480 ){
+          setMobile(true)
         }
     }, [])  
     const handleLogin = (e) =>{
@@ -49,12 +53,13 @@ function Register() {
           localStorage.setItem("Name", name);
           history.push('/')
       }).catch(function(error) {
+        console.log(error)
         setError(error.message)
      });
     }
-
-    return (
-<section className="user">
+    const Pc =() =>{
+      return(
+        <section className="user">
   <div className="user_options-container">
     <div className="user_options-text">
       <div className="user_options-unregistered">
@@ -113,7 +118,65 @@ function Register() {
     </div>
   </div>
 </section>
+      )
+    }
 
+    const Phone1 =() =>{
+      return(
+        <div className="user_forms_signup">
+          <div className="container_mob">
+
+
+        <h2 className="forms-title">Sign Up</h2>
+        <form className="forms-form" onSubmit={(e) => handleSignUp(e)}>
+            <div className="forms-field">
+              <input onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Full Name" className="forms_field_input" required />
+            </div>
+            <div className="forms-field">
+              <input onChange={(e) => setEmail(e.target.value)} value={email}  type="email" placeholder="Email" className="forms_field_input" required />
+            </div>
+            <div className="forms-field">
+              <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder="Password" className="forms_field_input" required />
+            </div>
+          <h5 style={{color:"red"}} >{error ? error : ""}</h5>
+          <div className="forms-buttons">
+            <input type="submit" value="Sign up" className="forms_buttons_action "/>
+          </div>
+        </form>     
+      </div>   
+    </div>
+      )
+    }
+    const Phone2 =() =>{
+      return(
+        <div className="user_forms_signup">
+          <div className="container_mob">
+
+
+        <h2 className="forms-title">Login</h2>
+        <form className="forms-form" onSubmit={(e) => handleLogin(e)}>
+            <div className="forms-field">
+              <input onChange={(e) => setEmail(e.target.value)} value={email}  type="email" placeholder="Email" className="forms_field_input" required />
+            </div>
+            <div className="forms-field">
+              <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" placeholder="Password" className="forms_field_input" required />
+            </div>
+          <h5 style={{color:"red"}} >{error ? error : ""}</h5>
+          <div className="forms-buttons">
+            <input type="submit" value="Login" className="forms_buttons_action "/>
+          </div>
+        </form>     
+      </div>   
+    </div>
+      )
+    }
+    const Phone =() =>{
+      return (
+        <>{bool ? Phone1() : Phone2()}</>
+      )
+    }
+    return(
+      <> {mobile ? Phone() : Pc()} </>
     )
 }
 

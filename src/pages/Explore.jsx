@@ -35,7 +35,7 @@ function Explore() {
         <div className="explore">
             <div className="explore_buttons">
                 <Link to="/" className="link" ><div className="explore_button green_bg_button">Go to home</div></Link>
-                <Link to="/explore" className="link" ><div className=" explore_button green_bg_button">Go to explore page</div> </Link>
+                <Link to="/dashboard" className="link" ><div className=" explore_button green_bg_button">Upload Image</div> </Link>
             </div>
             <div className="explore_container">
                 {loading ? 

@@ -26,14 +26,14 @@ function Home() {
             img : "https://images.unsplash.com/photo-1585146595462-ea5901dce0cc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
             alt : "plant",
             title : "Balloon Flower",
-            owner : "Arefin"
+            owner : "A Person"
         },
         
         {
             img : "https://images.unsplash.com/photo-1613347931228-fcc2229f439a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
             alt : "plant",
             title : "Beautybush",
-            owner : "Mickey Mouse"
+            owner : "Goku"
         },
     ]
     const mostFav =[
@@ -47,7 +47,7 @@ function Home() {
             img : "https://images.pexels.com/photos/1266302/pexels-photo-1266302.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
             alt : "plant",
             title : "Annual Vinca",
-            owner : "Sabil"
+            owner : "Adi"
         },
         {
             img : "https://images.pexels.com/photos/1090972/pexels-photo-1090972.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
@@ -82,12 +82,12 @@ function Home() {
                     <img src={logo} alt="plant logo" className="plant_logo nav_item"/>
                     <p className="nav_item">Gallery</p>
                 </div>
-                <div className="nav_items">
+                <div className="nav_items  no_mob">
                     <p className="nav_item" > About</p>
                 </div>
                 <div className="nav_items">
-                    {user.length == 0 ?<><Link to="/login" className="link" ><p className="nav_item">Login</p> </Link> 
-                    <Link to="/register" className="link" > <p className="nav_item">Register</p> </Link></> : <Link to="/dashboard" className="link" ><h3 className="greeting">Hey {user.name}</h3></Link>}
+                    {user.length == 0 ?<><Link to="/login" className="link" ><p className="nav_item mob">Login</p> </Link> 
+                    <Link to="/register" className="link" > <p className="nav_item mob">Register</p> </Link></> : <Link to="/dashboard" className="link" ><h3 className="greeting">Hey {user.name}</h3></Link>}
                 </div>
             </nav>
             <div className="headings">
@@ -126,7 +126,7 @@ function Home() {
                     return(
                         <>
                         <div className="fav_plant">
-                            <img className="fav_plant_image" src={object.img} alt={object.alt}/>
+                            <img className="plant_image" src={object.img} alt={object.alt}/>
                             <h6>{object.title}</h6>
                             <p>{object.owner}</p>
 

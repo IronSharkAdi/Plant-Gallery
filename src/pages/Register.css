@@ -371,3 +371,63 @@ input::placeholder {
     padding: 50px 45px;
   }
 }
+@media (min-width: 320px) and (max-width: 480px) {
+  .mob_register {
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url("https://image.freepik.com/free-photo/green-leaf-forest_1150-12333.jpg")
+      no-repeat center;
+    background-size: cover;
+  }
+  .user_forms_signup {
+    display: -webkit-box;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: url("https://image.freepik.com/free-photo/green-leaf-forest_1150-12333.jpg")
+      no-repeat center;
+    background-size: cover;
+  }
+  .container_mob {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 80%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .forms-field {
+    background-color: rgba(51, 255, 0, 0.336);
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 50px;
+  }
+  .forms_buttons_action {
+    width: 120px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.123);
+    border: rgba(255, 255, 255, 0.418) solid 3px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: white;
+    overflow: hidden;
+  }
+}
