@@ -10,7 +10,6 @@ function Dashboard() {
     const [img , setImg] = useState()
     const [url, setUrl] = useState()
     const [uploading, setUploading] = useState(false)
-    console.log(user)
     useEffect(() => {
         if(user.length == 0){
             var name = localStorage.getItem("Name");
@@ -24,11 +23,9 @@ function Dashboard() {
         setUploading(true)
         const storage = firebaseApp.storage()
         storage.ref(`/images/${img.name}`).put(img).then(function(snapshot){
-            console.log(snapshot)
             storage.ref().child(`/images/${img.name}`).getDownloadURL().then((url) =>{
                 setUrl(url)
                 firebaseApp.database().ref(`/users/${firebaseApp.auth().currentUser.uid}`).push({imgUrl : url , likes : 0})
-                console.log(url)
                 setUploading(false)
             })
         })
@@ -47,7 +44,7 @@ function Dashboard() {
                     <input onChange={(e) => handleImage(e)} className="dashboard_upload" required type="file"/>
                     <button type="submit" className="upload_button" >{ uploading ? "Uploading....." : "Submit" }</button>
                 </form>
-                {url ? <> <img className="dashboard_text"  style={{width:"50vh"}} src={url} alt="plant pic" /> <h2 className="dashboard_text">Submitted</h2> </> : <></> }
+                {url ? <> <img className="dashboard_text plant_image"   src={url} alt="plant pic" /> <h2 className="dashboard_text">Submitted</h2> </> : <></> }
                 <div className="go_back">
                     <Link to="/" className="link" ><div className="green_bg_button">Go to home</div></Link>
                     <Link to="/explore" className="link" ><div className="green_bg_button">Go to explore page</div> </Link>

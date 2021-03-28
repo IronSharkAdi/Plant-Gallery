@@ -74,7 +74,6 @@ function Home() {
 
 
 
-    console.log(user)
     return (
         <div className="Home">
             <div className="landing_page">

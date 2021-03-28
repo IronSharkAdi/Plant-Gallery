@@ -84,15 +84,7 @@
   font-weight: 500;
   margin: 0;
 }
-.plant_image {
-  width: 300px;
-  height: 300px;
-  border-radius: 25px;
-  -webkit-box-shadow: 21px 16px 20px -5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 21px 16px 20px -5px rgba(0, 0, 0, 0.75);
-  box-shadow: 21px 16px 20px -5px rgba(0, 0, 0, 0.75);
-  object-fit: cover;
-}
+
 
 @keyframes upanddown {
   0% {
